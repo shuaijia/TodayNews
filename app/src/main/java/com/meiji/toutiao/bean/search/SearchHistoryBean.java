@@ -7,7 +7,9 @@ package com.meiji.toutiao.bean.search;
 public class SearchHistoryBean {
 
     private String keyWord;
+
     private String time;
+
     private int type;
 
     public String getKeyWord() {
