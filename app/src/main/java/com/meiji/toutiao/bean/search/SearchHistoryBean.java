@@ -12,6 +12,7 @@ public class SearchHistoryBean {
 
     private int type;
 
+
     public String getKeyWord() {
         return keyWord;
     }
