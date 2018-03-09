@@ -292,19 +292,19 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //            case R.id.nav_account:
 //                drawer_layout.closeDrawers();
 //                return false;
-
-            case R.id.nav_switch_night_mode:
-                int mode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-                if (mode == Configuration.UI_MODE_NIGHT_YES) {
-                    SettingUtil.getInstance().setIsNightMode(false);
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                } else {
-                    SettingUtil.getInstance().setIsNightMode(true);
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }
-                getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
-                recreate();
-                return false;
+//
+//            case R.id.nav_switch_night_mode:
+//                int mode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+//                if (mode == Configuration.UI_MODE_NIGHT_YES) {
+//                    SettingUtil.getInstance().setIsNightMode(false);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                } else {
+//                    SettingUtil.getInstance().setIsNightMode(true);
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                }
+//                getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
+//                recreate();
+//                return false;
 
             case R.id.nav_setting:
                 startActivity(new Intent(this, SettingActivity.class));
@@ -315,7 +315,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 Intent shareIntent = new Intent()
                         .setAction(Intent.ACTION_SEND)
                         .setType("text/plain")
-                        .putExtra(Intent.EXTRA_TEXT, getString(R.string.share_app_text) + getString(R.string.source_code_url));
+                        .putExtra(Intent.EXTRA_TEXT, getString(R.string.share_app_text) + "https://github.com/shuaijia/TodayNews");
                 startActivity(Intent.createChooser(shareIntent, getString(R.string.share_to)));
                 drawer_layout.closeDrawers();
                 return false;

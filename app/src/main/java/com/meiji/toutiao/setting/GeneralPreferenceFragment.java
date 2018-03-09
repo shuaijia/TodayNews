@@ -51,13 +51,13 @@ public class GeneralPreferenceFragment extends PreferenceFragment implements Sha
         setHasOptionsMenu(true);
         setText();
 
-        findPreference("auto_nightMode").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                context.startWithFragment(AutoNightModeFragment.class.getName(), null, null, 0, null);
-                return true;
-            }
-        });
+//        findPreference("auto_nightMode").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+//            @Override
+//            public boolean onPreferenceClick(Preference preference) {
+//                context.startWithFragment(AutoNightModeFragment.class.getName(), null, null, 0, null);
+//                return true;
+//            }
+//        });
 
         findPreference("text_size").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
@@ -85,38 +85,38 @@ public class GeneralPreferenceFragment extends PreferenceFragment implements Sha
 //                return true;
 //            }
 //        });
-
-        findPreference("color").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                new ColorChooserDialog.Builder(context, R.string.choose_theme_color)
-                        .backButton(R.string.back)
-                        .cancelButton(R.string.cancel)
-                        .doneButton(R.string.done)
-                        .customButton(R.string.custom)
-                        .presetsButton(R.string.back)
-                        .allowUserColorInputAlpha(false)
-                        .show();
-                return false;
-            }
-        });
+//
+//        findPreference("color").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+//            @Override
+//            public boolean onPreferenceClick(Preference preference) {
+//                new ColorChooserDialog.Builder(context, R.string.choose_theme_color)
+//                        .backButton(R.string.back)
+//                        .cancelButton(R.string.cancel)
+//                        .doneButton(R.string.done)
+//                        .customButton(R.string.custom)
+//                        .presetsButton(R.string.back)
+//                        .allowUserColorInputAlpha(false)
+//                        .show();
+//                return false;
+//            }
+//        });
 
         colorPreview = (IconPreference) findPreference("color");
 
-        findPreference("nav_bar").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                int color = SettingUtil.getInstance().getColor();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    if (SettingUtil.getInstance().getNavBar()) {
-                        context.getWindow().setNavigationBarColor(CircleView.shiftColorDown(CircleView.shiftColorDown(color)));
-                    } else {
-                        context.getWindow().setNavigationBarColor(Color.BLACK);
-                    }
-                }
-                return false;
-            }
-        });
+//        findPreference("nav_bar").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+//            @Override
+//            public boolean onPreferenceClick(Preference preference) {
+//                int color = SettingUtil.getInstance().getColor();
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    if (SettingUtil.getInstance().getNavBar()) {
+//                        context.getWindow().setNavigationBarColor(CircleView.shiftColorDown(CircleView.shiftColorDown(color)));
+//                    } else {
+//                        context.getWindow().setNavigationBarColor(Color.BLACK);
+//                    }
+//                }
+//                return false;
+//            }
+//        });
 
         findPreference("clearCache").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

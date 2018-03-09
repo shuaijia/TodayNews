@@ -11,10 +11,10 @@
     <!--</group>-->
 
     <group android:id="@+id/other">
-        <item
-            android:id="@+id/nav_switch_night_mode"
-            android:icon="@drawable/ic_night_gray_24dp"
-            android:title="@string/nav_switch_night_mode"/>
+        <!--<item-->
+            <!--android:id="@+id/nav_switch_night_mode"-->
+            <!--android:icon="@drawable/ic_night_gray_24dp"-->
+            <!--android:title="@string/nav_switch_night_mode"/>-->
         <item
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_setting_gray_24dp"
